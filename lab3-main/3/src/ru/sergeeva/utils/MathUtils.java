@@ -1,11 +1,14 @@
 package ru.sergeeva.utils;
 
-
 /**
- * Утилитный класс для математических операций.
+ * Утилиты для математических операций.
  */
 public class MathUtils {
-    // Метод для вычисления суммы чисел
+    /**
+     * Суммирование чисел.
+     * @param values числа для суммирования (double...)
+     * @return сумма чисел (double)
+     */
     public static double sum(double... values) {
         double sum = 0;
         for (double value : values) {
