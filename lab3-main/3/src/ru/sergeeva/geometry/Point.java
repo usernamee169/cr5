@@ -1,29 +1,34 @@
 package ru.sergeeva.geometry;
 
 /**
- * Класс, представляющий точку в двумерном или трехмерном пространстве.
- * Поддерживает координаты X, Y и Z (опционально).
+ * Класс для представления точки на плоскости.
+ * @param x координата X (int)
+ * @param y координата Y (int)
+ * @param z координата Z (int), по умолчанию 0
  */
 public class Point {
     private int x;
     private int y;
-    private int z; // Для трехмерной точки
+    private int z;
 
-    // Конструктор для двумерной точки
+    /**
+     * Конструктор для двумерной точки.
+     */
     public Point(int x, int y) {
         this.x = x;
         this.y = y;
-        this.z = 0; // По умолчанию Z = 0 для двумерной точки
+        this.z = 0;
     }
 
-    // Конструктор для трехмерной точки
+    /**
+     * Конструктор для трехмерной точки.
+     */
     public Point(int x, int y, int z) {
         this.x = x;
         this.y = y;
         this.z = z;
     }
 
-    // Геттеры и сеттеры
     public int getX() { return x; }
     public void setX(int x) { this.x = x; }
 
@@ -35,11 +40,9 @@ public class Point {
 
     @Override
     public String toString() {
-        if (z == 0) {
-            return "{" + x + ";" + y + "}";
-        } else {
-            return "{" + x + ";" + y + ";" + z + "}";
-        }
+        return z == 0 ? 
+            "{" + x + ";" + y + "}" : 
+            "{" + x + ";" + y + ";" + z + "}";
     }
 
     @Override
