@@ -1,23 +1,22 @@
 package ru.sergeeva.geometry;
 
 /**
- * Класс, представляющий линию, заданную двумя точками.
- * Поддерживает инкапсуляцию, проверку на уникальность точек и клонирование.
+ * Класс для представления линии на плоскости.
+ * @param start начальная точка линии
+ * @param end конечная точка линии
  */
 public class Line implements Cloneable {
     private Point start;
     private Point end;
 
-    // Конструктор
     public Line(Point start, Point end) {
         if (start.equals(end)) {
             throw new RuntimeException("Начало и конец линии не могут быть одной точкой");
         }
-        this.start = new Point(start.getX(), start.getY(), start.getZ());
-        this.end = new Point(end.getX(), end.getY(), end.getZ());
+        this.start = new Point(start.getX(), start.getY());
+        this.end = new Point(end.getX(), end.getY());
     }
 
-    // Геттеры и сеттеры
     public Point getStart() { return start; }
     public Point getEnd() { return end; }
 
@@ -25,14 +24,14 @@ public class Line implements Cloneable {
         if (start.equals(this.end)) {
             throw new RuntimeException("Начало и конец линии не могут быть одной точкой");
         }
-        this.start = new Point(start.getX(), start.getY(), start.getZ());
+        this.start = new Point(start.getX(), start.getY());
     }
 
     public void setEnd(Point end) {
         if (end.equals(this.start)) {
             throw new RuntimeException("Начало и конец линии не могут быть одной точкой");
         }
-        this.end = new Point(end.getX(), end.getY(), end.getZ());
+        this.end = new Point(end.getX(), end.getY());
     }
 
     @Override
@@ -57,7 +56,6 @@ public class Line implements Cloneable {
         }
     }
 
-    // Метод для проверки, что две линии не имеют общих точек (package-private)
     void checkForSharedPoints(Line otherLine) {
         if (this.start.equals(otherLine.start) || this.start.equals(otherLine.end) ||
                 this.end.equals(otherLine.start) || this.end.equals(otherLine.end)) {
