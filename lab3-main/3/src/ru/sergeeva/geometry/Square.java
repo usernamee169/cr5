@@ -1,27 +1,34 @@
 package ru.sergeeva.geometry;
 
-
 /**
- * Класс, представляющий квадрат.
- * Квадрат задается левой верхней точкой и длиной стороны.
+ * Класс для представления квадрата.
+ * @param topLeft точка левого верхнего угла (Point)
+ * @param sideLength длина стороны (int)
  */
 public class Square {
     private Point topLeft;
     private int sideLength;
 
-    // Конструктор с точкой
+    /**
+     * Конструктор с указанием точки.
+     */
     public Square(Point topLeft, int sideLength) {
         this.topLeft = new Point(topLeft.getX(), topLeft.getY());
         this.sideLength = sideLength;
     }
 
-    // Конструктор с координатами
+    /**
+     * Конструктор с указанием координат.
+     */
     public Square(int x, int y, int sideLength) {
         this.topLeft = new Point(x, y);
         this.sideLength = sideLength;
     }
 
-    // Метод для получения ломаной линии, представляющей квадрат
+    /**
+     * Получение ломаной линии, представляющей квадрат.
+     * @return ломаная линия (Polyline)
+     */
     public Polyline getPolyline() {
         Point p1 = topLeft;
         Point p2 = new Point(topLeft.getX() + sideLength, topLeft.getY());
