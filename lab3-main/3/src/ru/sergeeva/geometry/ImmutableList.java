@@ -1,66 +1,44 @@
 package ru.sergeeva.geometry;
 
+import java.util.Arrays;
+
 /**
- * Класс, представляющий неизменяемый список целых чисел.
+ * Неизменяемый список целых чисел.
+ * @param array массив для хранения значений
  */
 public class ImmutableList {
     private final int[] array;
 
-
-
-    // Конструктор с переменным числом аргументов (public)
     public ImmutableList(int... values) {
-        this.array = values.clone();
+        this.array = Arrays.copyOf(values, values.length);
     }
 
-    // Конструктор копирования (public)
     public ImmutableList(ImmutableList other) {
-        this.array = other.array.clone();
+        this.array = Arrays.copyOf(other.array, other.array.length);
     }
 
-    // Метод для получения элемента по индексу (public)
     public int get(int index) {
         if (index < 0 || index >= array.length) {
-            throw new RuntimeException("Индекс за пределами массива");
+            throw new IndexOutOfBoundsException("Индекс за пределами массива: " + index);
         }
         return array[index];
     }
 
-    // Метод для замены элемента (возвращает новый список) (public)
     public ImmutableList set(int index, int value) {
         if (index < 0 || index >= array.length) {
-            throw new RuntimeException("Индекс за пределами массива");
+            throw new IndexOutOfBoundsException("Индекс за пределами массива: " + index);
         }
-        int[] newArray = array.clone();
+        int[] newArray = Arrays.copyOf(array, array.length);
         newArray[index] = value;
         return new ImmutableList(newArray);
     }
 
-    // Метод для проверки, пуст ли список (public)
-    public boolean isEmpty() {
-        return array.length == 0;
-    }
-
-    // Метод для получения размера списка (public)
-    public int size() {
-        return array.length;
-    }
-
-    // Метод для получения массива значений (public)
-    public int[] toArray() {
-        return array.clone();
-    }
+    public boolean isEmpty() { return array.length == 0; }
+    public int size() { return array.length; }
+    public int[] toArray() { return Arrays.copyOf(array, array.length); }
 
     @Override
     public String toString() {
-        StringBuilder sb = new StringBuilder("[");
-        for (int i = 0; i < array.length; i++) {
-            sb.append(array[i]);
-            if (i < array.length - 1) {
-                sb.append(", ");
-            }
-        }
-        sb.append("]");
-        return sb.toString();
+        return Arrays.toString(array);
     }
 }
