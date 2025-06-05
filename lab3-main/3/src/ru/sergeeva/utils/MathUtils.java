@@ -1,15 +1,15 @@
 package ru.sergeeva.utils;
 
-public class MathUtils {
-    /*
+    /**
      * Утилиты для математических операций.
      */
-    public static double sum(double... values) {
-    /*
+public class MathUtils {
+    /**
      * Суммирование чисел.
      * @param values числа для суммирования (double...)
      * @return сумма чисел (double)
      */
+    public static double sum(double... values) {
         double sum = 0;
         for (double value : values) {
             sum += value;
