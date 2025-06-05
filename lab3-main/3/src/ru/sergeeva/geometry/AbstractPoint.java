@@ -17,10 +17,16 @@ public abstract class AbstractPoint {
         this.creationTime = creationTime;
     }
 
-    public String getColor() { return color; }
-    public void setColor(String color) { this.color = color; }
+    public String getColor() {
+        return color;
+    }
+    public void setColor(String color) {
+        this.color = color; 
+    }
 
-    public String getCreationTime() { return creationTime; }
+    public String getCreationTime() {
+        return creationTime; 
+    }
     public void setCreationTime(String creationTime) { 
         this.creationTime = creationTime; 
     }
