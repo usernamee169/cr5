@@ -4,9 +4,8 @@ import ru.sergeeva.geometry.*;
 import ru.sergeeva.utils.MathUtils;
 import java.util.Scanner;
 
-
 public class Main {
-    /**
+    /*
      * Главный класс программы для демонстрации работы всех сущностей.
      */
     public static void main(String[] args) {
