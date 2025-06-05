@@ -4,10 +4,10 @@ import ru.sergeeva.geometry.*;
 import ru.sergeeva.utils.MathUtils;
 import java.util.Scanner;
 
-public class Main {
-    /*
+    /**
      * Главный класс программы для демонстрации работы всех сущностей.
      */
+public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         
