@@ -2,32 +2,26 @@ package ru.sergeeva.main;
 
 import ru.sergeeva.geometry.*;
 import ru.sergeeva.utils.MathUtils;
-
 import java.util.Scanner;
 
-/**
- * Главный класс программы для демонстрации работы всех сущностей.
- */
+
 public class Main {
+    /**
+     * Главный класс программы для демонстрации работы всех сущностей.
+     */
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         
-        // Демонстрация работы с линиями
         demonstrateLineOperations(scanner);
         
-        // Демонстрация работы с квадратом
         demonstrateSquareOperations();
         
-        // Демонстрация работы с неизменяемым списком
         demonstrateImmutableListOperations(scanner);
         
-        // Демонстрация работы с точками
         demonstratePointOperations();
         
-        // Демонстрация математических операций
         demonstrateMathOperations();
         
-        // Демонстрация возведения в степень
         if (args.length == 2) {
             demonstratePowerOperation(args);
         }
@@ -36,6 +30,7 @@ public class Main {
     }
 
     private static void demonstrateLineOperations(Scanner scanner) {
+        // Задание 1.6
         System.out.println("\n=== Задание 1.6: Работа с линией ===");
         
         System.out.println("Введите координаты начала первой линии (x y):");
@@ -54,7 +49,7 @@ public class Main {
         
         checkLinesForSharedPoints(line1, line2);
         
-        // Демонстрация клонирования линии
+        // Задание 8.5
         System.out.println("\n=== Задание 8.5: Клонирование линии ===");
         Line clonedLine = line1.clone();
         System.out.println("Клонированная линия: " + clonedLine);
@@ -84,7 +79,7 @@ public class Main {
             System.out.println(e.getMessage());
         }
     }
-
+    // Задание 1.12
     private static void demonstrateSquareOperations() {
         System.out.println("\n=== Задание 1.12: Работа с квадратом ===");
         
@@ -99,7 +94,8 @@ public class Main {
         System.out.println("Ломаная после изменения: " + polyline);
         System.out.println("Новая длина ломаной: " + polyline.getLength());
     }
-
+    
+    // Задание 2.1
     private static void demonstrateImmutableListOperations(Scanner scanner) {
         System.out.println("\n=== Задание 2.1: Работа с неизменяемым списком ===");
         
@@ -133,6 +129,7 @@ public class Main {
         System.out.println(point3D);
     }
 
+    // Задание 5.1
     private static void demonstrateMathOperations() {
         System.out.println("\n=== Задание 5.1: Сложение чисел ===");
         System.out.println("Сумма 2 + 3/5 + 2.3: " + MathUtils.sum(2, 3.0/5, 2.3));
